@@ -3,4 +3,5 @@ module.exports = {
     title: "react-live-build-error",
   },
   plugins: [],
+  pathPrefix: '/my-app',
 };
