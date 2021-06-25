@@ -1,13 +1,11 @@
-`react-live` + Gatsby works when doing local development, but not when building and serving.
+`react-live` + Gatsby + `koa-static-server` does not work when changing the root path served.
 
 ## Repro steps
 
-### Doesn't work
-1. Run `npm install`
-2. Run `npm run build`
-3. Serve the production build on a server, e.g. `python -m SimpleHTTPServer`
-4. Navigate to `localhost:8000/public`
+1. Run `npm install` to install dependencies.
+2. Run `npm run build` to build the Gatsby app.
+3. Run `npm run server` to serve the Gatsby app with a Koa static server.
+4. Navigate to `localhost:3000/my-app/`
 5. Editing the code snippet doesn't update the live preview.
 
-### Works
-WIP
+Changing the `koa-static-server` rootPath from `/my-app/` to `/` works (navigating to `localhost:3000`), but for the live application I'm working on, I need to add a prefix to my app route.
